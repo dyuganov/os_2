@@ -22,7 +22,6 @@ void *thread_body(void *args) {
 
 int main(int argc, char *argv[]) {
     pthread_t thread;
-    int i;
     int errorCode = pthread_create(&thread, NULL, thread_body, NULL); //создание нити
     // 0 при успешном завершении, при ошибке - код ошибки
     // аргументы:
