@@ -39,14 +39,14 @@ int main(int argc, char *argv[]) {
     // 2. атрибуты потока - NULL -> атрибуты по умолчанию
     // 3. та ф-я, которая будет выполняться в новом потоке
     // 4. аргументы для этой самой ф-и
-    if (isError(errorCode, argv)) {
+    if (isThreadError(errorCode, argv)) {
         exit(ERROR);
     }
     errorCode = pthread_join(thread, NULL); // ожидание завершения потока -- блокирует вызывающий поток, пока указанный поток не завершится
     // аргументы:
     // 1. идентификатор нити
     // 2. указатель на переменную, в которой будет размещаться значение кода возврата. NULL -- код возврата игнорируется
-    if (isError(errorCode, argv)) {
+    if (isThreadError(errorCode, argv)) {
         exit(ERROR);
     }
     for (int i = 0; i < 10; i++) {
