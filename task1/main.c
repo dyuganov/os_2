@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
     // 4. аргументы для этой самой ф-и
     if (errorCode != SUCCESS) {
         char message[BUFFER_SIZE];
-        strerror_r(errorCode, message, sizeof message); //возвращают строку в буфере message, описывающую ошибку
+        strerror_r(errorCode, message, BUFFER_SIZE); //возвращают строку в буфере message, описывающую ошибку
         fprintf(stderr, "%s: creating thread: %s\n", argv[0], message);
         exit(ERROR);
     }
