@@ -16,7 +16,7 @@
 
 void *threadBody(void *args) {
     for (char **s = (char **)args; *s != NULL; ++s) {
-        printf("%s\n", *s);
+        fprintf(stdout, "%s\n", *s);
     }
     pthread_exit(SUCCESS);
 }
