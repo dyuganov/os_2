@@ -16,8 +16,7 @@
 
 void *threadBody(void *args) {
     for (char **s = (char **)args; *s != NULL; ++s) {
-        //printf("%s\n", *s);
-        fwrite(*s, sizeof(char *), , stdout);
+        printf("%s\n", *s);
     }
     pthread_exit(SUCCESS);
 }
@@ -25,7 +24,7 @@ void *threadBody(void *args) {
 bool isThreadError(int errorCode, char *argv[]) {
     if (errorCode != SUCCESS) {
         char message[BUFFER_SIZE];
-        //strerror_r(errorCode, message, sizeof message);
+        strerror_r(errorCode, message, sizeof message);
         fprintf(stderr, "%s: Error: %s\n", argv[0], message);
         return true;
     }
@@ -37,10 +36,10 @@ int main(int argc, char *argv[]) {
     int errorCode;
     void *threadsReturn;
     char *args[][NUM_OF_THREADS] = {
-            {"1 thread:: 1 line\n", "1 thread:: 2 line\n", "1 thread:: 3 line\n", NULL},
-            {"2 thread:: 1 line\n", "2 thread:: 2 line\n", "2 thread:: 3 line\n", NULL},
-            {"3 thread:: 1 line\n", "3 thread:: 2 line\n", "3 thread:: 3 line\n", NULL},
-            {"4 thread:: 1 line\n", "4 thread:: 2 line\n", "4 thread:: 3 line\n", NULL}
+            {"1 thread:: 1 line", "1 thread:: 2 line", "1 thread:: 3 line", NULL},
+            {"2 thread:: 1 line", "2 thread:: 2 line", "2 thread:: 3 line", NULL},
+            {"3 thread:: 1 line", "3 thread:: 2 line", "3 thread:: 3 line", NULL},
+            {"4 thread:: 1 line", "4 thread:: 2 line", "4 thread:: 3 line", NULL}
     };
     for (int i = 0; i < NUM_OF_THREADS; ++i) {
         errorCode = pthread_create(&treadsID[i], NULL, threadBody, args[i]);
