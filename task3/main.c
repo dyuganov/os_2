@@ -15,7 +15,7 @@
 #define BUFFER_SIZE 256
 
 void *threadBody(void *args) {
-    for (char **s = (char **)args; *s != NULL; ++s) {
+    for (char **s = args; *s != NULL; ++s) {
         fprintf(stdout, "%s\n", *s);
     }
     pthread_exit(SUCCESS);
@@ -32,7 +32,7 @@ bool isThreadError(int errorCode, char *argv[]) {
 }
 
 int main(int argc, char *argv[]) {
-    pthread_t treadsID[4];
+    pthread_t treadsID[NUM_OF_THREADS];
     int errorCode;
     void *threadsReturn;
     char *args[][NUM_OF_THREADS] = {
