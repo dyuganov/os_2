@@ -18,7 +18,7 @@ void *threadBody(void *args) {
     for (char **s = args; *s != NULL; ++s) {
         fprintf(stdout, "%s\n", *s);
     }
-    pthread_exit(SUCCESS);
+    pthread_exit(EXIT_SUCCESS);
 }
 
 bool isThreadError(int errorCode, char *argv[]) {
