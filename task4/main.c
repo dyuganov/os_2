@@ -35,7 +35,10 @@ int main(int argc, char *argv[]) {
     }
 
     sleep(2);
-    pthread_cancel(thread_id);
+    errCode = pthread_cancel(thread_id);
+    if (isThreadError(errCode, argv)) {
+        exit(ERROR);
+    }
 
     errCode = pthread_join(thread_id, NULL);
     if (isThreadError(errCode, argv)) {
