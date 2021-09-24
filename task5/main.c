@@ -46,7 +46,10 @@ int main(int argc, char *argv[]) {
 
     pthread_cleanup_pop(REMOVE_ROUTINE);
 
-    pthread_cancel(thread_id);
+    errCode = pthread_cancel(thread_id);
+    if (isThreadError(errCode, argv)) {
+        exit(ERROR);
+    }
 
     errCode = pthread_join(thread_id, NULL);
     if (isThreadError(errCode, argv)) {
