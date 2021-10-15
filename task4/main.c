@@ -6,14 +6,15 @@
 #include <unistd.h>
 
 #define SUCCESS 0
-#define ERROR 1
 #define BUFFER_SIZE 256
+#define SLEEP_TIME 2
 
 void *run_thread(void *args) {
+    char *text = "Executing thread\n";
+    int len = strlen(text);
     while (1) {
-        printf("Executing thread\n");
+        write(0, text, len);
     }
-    return 0;
 }
 
 bool isThreadError(int errorCode, char *argv[]) {
@@ -31,19 +32,19 @@ int main(int argc, char *argv[]) {
     int errCode = pthread_create(&thread_id, NULL, run_thread, NULL);
 
     if (isThreadError(errCode, argv)) {
-        exit(ERROR);
+        pthread_exit((void *) EXIT_FAILURE);
     }
 
-    sleep(2);
+    sleep(SLEEP_TIME);
     errCode = pthread_cancel(thread_id);
     if (isThreadError(errCode, argv)) {
-        exit(ERROR);
+        pthread_exit((void *) EXIT_FAILURE);
     }
 
     errCode = pthread_join(thread_id, NULL);
     if (isThreadError(errCode, argv)) {
-        exit(ERROR);
+        pthread_exit((void *) EXIT_FAILURE);
     }
 
-    return 0;
+    pthread_exit(SUCCESS);
 }

@@ -6,21 +6,26 @@
 #include <unistd.h>
 
 #define SUCCESS 0
-#define ERROR 1
-#define REMOVE_ROUTINE 1
+#define REMOVE_ROUTINE 0
 #define BUFFER_SIZE 256
-
-void *run_thread(void *args) {
-    while (1) {
-        printf("Executing thread\n");
-    }
-    return 0;
-}
+#define SLEEP_TIME 2
 
 void finalFunction(void *args) {
     printf("Second thread's execution is interrupted\n");
 }
 
+void *run_thread(void *args) {
+    pthread_cleanup_push(finalFunction, NULL);
+    char *text = "Executing thread\n";
+    int len = strlen(text);
+
+    while (1) {
+        write(0, text, len);
+        if (args != NULL) {
+            pthread_cleanup_pop(REMOVE_ROUTINE);
+        }
+    }
+}
 
 bool isThreadError(int errorCode, char *argv[]) {
     if (errorCode != SUCCESS) {
@@ -37,24 +42,19 @@ int main(int argc, char *argv[]) {
     int errCode = pthread_create(&thread_id, NULL, run_thread, NULL);
 
     if (isThreadError(errCode, argv)) {
-        exit(ERROR);
+        pthread_exit((void *) EXIT_FAILURE);
     }
 
-    sleep(2);
-
-    pthread_cleanup_push(finalFunction, NULL);
-
-    pthread_cleanup_pop(REMOVE_ROUTINE);
+    sleep(SLEEP_TIME);
 
     errCode = pthread_cancel(thread_id);
     if (isThreadError(errCode, argv)) {
-        exit(ERROR);
+        pthread_exit((void *) EXIT_FAILURE);
     }
 
     errCode = pthread_join(thread_id, NULL);
     if (isThreadError(errCode, argv)) {
-        exit(ERROR);
+        pthread_exit((void *) EXIT_FAILURE);
     }
-
-    return 0;
+    pthread_exit((void *) SUCCESS);
 }
