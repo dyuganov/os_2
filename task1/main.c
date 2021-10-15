@@ -21,8 +21,7 @@ void *thread_body(void *args) {
 }
 
 int main(int argc, char *argv[]) {
-    pthread_t *thread;
-    int i;
+    pthread_t *thread = NULL;
     int errorCode = pthread_create(thread, NULL, thread_body, NULL); //создание нити
     // 0 при успешном завершении, при ошибке - код ошибки
     // аргументы:
@@ -32,7 +31,7 @@ int main(int argc, char *argv[]) {
     // 4. аргументы для этой самой ф-и
     if (errorCode != SUCCESS) {
         char message[BUFFER_SIZE];
-        strerror_r(errorCode, message, sizeof message); //возвращают строку в буфере message, описывающую ошибку
+        strerror_r(errorCode, message, BUFFER_SIZE); //возвращают строку в буфере message, описывающую ошибку
         fprintf(stderr, "%s: creating thread: %s\n", argv[0], message);
         exit(ERROR);
     }
