@@ -38,7 +38,6 @@ int main(int argc, char** argv){
         int createResult = pthread_create(&thread_id[i], NULL, threadJob, NULL);
         if(isThreadsError(createResult)){
             pthread_exit(FAIL);
-            exit(FAIL);
         }
     }
 
@@ -46,7 +45,6 @@ int main(int argc, char** argv){
         int joinResult = pthread_join(thread_id[i], NULL);
         if(isThreadsError(joinResult)) {
             pthread_exit(FAIL);
-            exit(FAIL);
         }
     }
     pthread_exit(SUCCESS);
