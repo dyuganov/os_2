@@ -15,8 +15,6 @@
 #define SUCCESS (0)
 #define FAIL (1)
 
-
-
 void* threadSortJob(void* arg) {
     char* string = (char*) arg;
     int length = strnlen(string, MAX_STRING_LENGTH);
@@ -70,14 +68,12 @@ int main (int argc, char** argv) {
     if(NULL == file) {
         fprintf(stderr, "Can't open the file\n");
         pthread_exit(FAIL);
-        exit(FAIL);
     }
 
     const int STRINGS_NUM = getLinesNum(file);
     if(isGetLinesNumError(STRINGS_NUM)){
         fclose(file);
         pthread_exit(FAIL);
-        exit(FAIL);
     }
 
     char strings[STRINGS_NUM][MAX_STRING_LENGTH];
@@ -91,7 +87,6 @@ int main (int argc, char** argv) {
         int createResult = pthread_create(&thread_id[i], NULL, threadSortJob, strings[i]);
         if(isThreadsError(createResult)){
             pthread_exit(FAIL);
-            exit(FAIL);
         }
     }
 
@@ -99,10 +94,8 @@ int main (int argc, char** argv) {
         int joinResult = pthread_join(thread_id[i], NULL);
         if(isThreadsError(joinResult)) {
             pthread_exit(FAIL);
-            exit(FAIL);
         }
     }
 
     pthread_exit(SUCCESS);
-    return 0;
 }
