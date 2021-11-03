@@ -8,10 +8,6 @@
 
 #define SUCCESS 0
 
-// 0 == "nobody's (common) mutex"
-// 1 == "parent's mutex"
-// 2 == "child's mutex"
-
 pthread_t thread;
 
 pthread_mutex_t mutexes[3];
@@ -42,7 +38,7 @@ void joinChildThread() {
 void* childPrintStrings() {
     for (int i = 1; i <= 10; i++) {
         lockMutex(PARENT);
-        printf("CHILD THREAD: this is string №%d\n", i);
+        printf("child thread №%d\n", i);
         unlockMutex(CHILD);
         lockMutex(COMMON);
         unlockMutex(PARENT);
@@ -63,7 +59,7 @@ void startChildThread() {
 
 void parentPrintStrings() {
     for (int i = 1; i <= 10; i++) {
-        printf("PARENT THREAD: this is string №%d\n", i);
+        printf("parent thread №%d\n", i);
         lockMutex(COMMON);
         unlockMutex(PARENT);
         lockMutex(CHILD);
