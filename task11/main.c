@@ -79,7 +79,6 @@ int main() {
 
     lockMutex(PARENT);
     startChildThread();
-    sleep(1);
     parentPrintStrings();
     joinChildThread();
     destroyMutexes();
