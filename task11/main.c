@@ -39,7 +39,7 @@ void* childPrintStrings() {
 	lockMutex(CHILD);
     for (int i = 1; i <= 10; i++) {
         lockMutex(PARENT);
-        printf("child thread в„–%d\n", i);
+        printf("child thread №%d\n", i);
         unlockMutex(CHILD);
         lockMutex(COMMON);
         unlockMutex(PARENT);
@@ -60,7 +60,7 @@ void startChildThread() {
 void parentPrintStrings() {
 	sleep(1);
     for (int i = 1; i <= 10; i++) {
-        printf("parent thread в„–%d\n", i);
+        printf("parent thread №%d\n", i);
         lockMutex(COMMON);
         unlockMutex(PARENT);
         lockMutex(CHILD);
