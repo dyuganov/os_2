@@ -36,9 +36,10 @@ void joinChildThread() {
 }
 
 void* childPrintStrings() {
+	lockMutex(CHILD);
     for (int i = 1; i <= 10; i++) {
         lockMutex(PARENT);
-        printf("child thread №%d\n", i);
+        printf("child thread в„–%d\n", i);
         unlockMutex(CHILD);
         lockMutex(COMMON);
         unlockMutex(PARENT);
@@ -49,7 +50,6 @@ void* childPrintStrings() {
 }
 
 void startChildThread() {
-    lockMutex(CHILD);
     int status = pthread_create(&thread, NULL, childPrintStrings, NULL);
     if (status != SUCCESS) {
         printf("Error couldn't create thread = %d\n", status);
@@ -58,8 +58,9 @@ void startChildThread() {
 }
 
 void parentPrintStrings() {
+	sleep(1);
     for (int i = 1; i <= 10; i++) {
-        printf("parent thread №%d\n", i);
+        printf("parent thread в„–%d\n", i);
         lockMutex(COMMON);
         unlockMutex(PARENT);
         lockMutex(CHILD);
