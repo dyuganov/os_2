@@ -1,19 +1,19 @@
-#include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <pthread.h>
 #include <string.h>
+#include <math.h>
 #include <stdbool.h>
 #include <signal.h>
-#include <math.h>
 
 #define NUM_STEPS 2000
 #define SUCCESS 0
 #define ERROR -1
 #define BUFFER_SIZE 256
 
-long long threadsNumber;
-int stop = 0;
-pthread_mutex_t _mutex = PTHREAD_MUTEX_INITIALIZER;
+long long threadsNumber = 0;
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+bool stopFlag = false;
 long long maxIter = 0;
 
 struct threadInfo {
@@ -27,6 +27,7 @@ int checkInput(int argc, char** argv) {
         return ERROR;
     }
     threadsNumber = atoi(argv[1]);
+
     if (threadsNumber < 1) {
         fprintf(stderr, "%d is incorrect number of threads\n", threadsNumber);
         return ERROR;
@@ -34,9 +35,9 @@ int checkInput(int argc, char** argv) {
     return SUCCESS;
 }
 
-void sighandler(int signal) {
+void sighandler(int signal)  {
     if (signal == SIGINT) {
-        stop = 1;
+        stopFlag = true;
     }
 }
 
@@ -50,111 +51,102 @@ bool isThreadError(int errorCode) {
     return false;
 }
 
-int lock(pthread_mutex_t *mutex) {
-    int errorCode = pthread_mutex_lock(mutex);
+void lock() {
+    int errorCode = pthread_mutex_lock(&mutex);
     if (isThreadError(errorCode)) {
         pthread_exit((void *) ERROR);
     }
-    return errorCode;
 }
 
-int unlock(pthread_mutex_t *mutex) {
-    int errorCode = pthread_mutex_unlock(mutex);
+void unlock() {
+    int errorCode = pthread_mutex_unlock(&mutex);
     if (isThreadError(errorCode)) {
         pthread_exit((void *) ERROR);
     }
-    return errorCode;
 }
 
-void* calculate(void *threads) {
-    struct threadInfo *localStruct = (struct threadInfo*) threads;
-    if (localStruct == NULL) {
-        fprintf(stderr, "Error with local structure in calculate func\n");
-        pthread_exit(localStruct);
-    }
-    long long thread = localStruct->thread;
-    double local_pi = 0.0;
+void *calculate(void *threadInfo) {
+    struct threadInfo *local = (struct threadInfo *)threadInfo;
+    long long thread = local->thread;
+    double localPi = 0.0;
     long long iter = 0;
-    while (1) {
-        if (stop == 1 && iter != 0) {
-            lock(&_mutex);
+    while (true) {
+        if (stopFlag && iter != 0) {
+            lock();
             if (iter >= maxIter) {
-                unlock(&_mutex);
+                unlock();
                 break;
             }
-            unlock(&_mutex);
-        } else {
-            lock(&_mutex);
+            unlock();
+        }
+        else {
+            lock();
             if (iter > maxIter) {
                 maxIter = iter;
             }
-            unlock(&_mutex);
+            unlock();
             sched_yield();
         }
-        long long start = (iter * threadsNumber + thread) * NUM_STEPS;
-        for (long long i = start; i < start + NUM_STEPS; ++i) {
-            local_pi += 1.0 / (i * 4.0 + 1.0);
-            local_pi -= 1.0 / (i * 4.0 + 3.0);
+
+        long long firstStep = (iter * threadsNumber + thread) * NUM_STEPS;
+        for (long long i = firstStep; i < firstStep + NUM_STEPS; i++) {
+            localPi += 1.0 / (i * 4.0 + 1.0);
+            localPi -= 1.0 / (i * 4.0 + 3.0);
         }
         iter++;
+        fprintf(stdout, "iter = %lld", iter);
     }
-    localStruct->result = local_pi;
-    pthread_exit(threads);
+    local->result = localPi;
+    pthread_exit(local);
 }
 
-void delete(pthread_t *threadId,struct threadInfo *threadInfo) {
-    free(threadInfo);
-    free(threadId);
-}
-
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
     if (checkInput(argc, argv) == ERROR) {
         pthread_exit((void *) ERROR);
     }
-    if (signal(SIGINT, sighandler) == SIG_ERR) {
+    struct sigaction act;
+    memset(&act, 0, sizeof(act));
+    act.sa_handler = sighandler;
+    sigset_t   set;
+    sigemptyset(&set);
+    sigaddset(&set, SIGINT);
+    act.sa_mask = set;
+
+    if (sigaction(SIGINT, &act, 0) == -1) {
         pthread_exit((void *) ERROR);
     }
     double pi = 0.0;
-    pthread_t *threadId = (pthread_t*) malloc(threadsNumber * sizeof(pthread_t));
-    struct threadInfo *threadInfo = (struct threadInfo*)malloc(threadsNumber * sizeof(struct threadInfo));
-    if (threadInfo == NULL || threadId == NULL) {
-        fprintf(stderr, "error with malloc()\n");
-        return EXIT_FAILURE;
-    }
+    pthread_t threadsId[threadsNumber];
+    struct threadInfo threadInfo[threadsNumber];
 
-    long long errorCode, count = 0;
-    for (long long i = 0; i < threadsNumber && stop == 0; ++i) {
+    int errorCode;
+    long long actualNumOfThreads = 0;
+    for (long long i = 0; i < threadsNumber && !stopFlag; i++) {
         threadInfo[i].thread = i;
-        errorCode = pthread_create(&threadId[i], NULL, calculate, &threadInfo[i]);
+        errorCode = pthread_create(&threadsId[i], NULL, calculate, &threadInfo[i]);
         if (isThreadError(errorCode)) {
-            delete(threadId, threadInfo);
             pthread_exit((void *) ERROR);
         }
-        count++;
+        actualNumOfThreads++;
     }
-    if (count == 0) {
-        pthread_exit((void *) ERROR);
-    }
-    if (count < threadsNumber) {
-        stop = 1;
+    if (actualNumOfThreads < threadsNumber) {
+        stopFlag = true;
+        fprintf(stderr, "Error: createThreads func\n");
     }
 
-    for (long int i = 0; i < threadsNumber; ++i) {
+    for (long long i = 0; i < threadsNumber; i++) {
         struct threadInfo *local = NULL;
-        errorCode = pthread_join(threadId[i], (void **) &local);
+        errorCode = pthread_join(threadsId[i], (void **)&local);
         if (isThreadError(errorCode)) {
-            delete(threadId, threadInfo);
             pthread_exit((void *) ERROR);
         }
         if (local == NULL) {
-            fprintf(stderr, "Error with local structure\n");
-            continue;
+            pthread_exit((void *) ERROR);
         }
-        pi += local[i].result;
+        pi += local->result;
     }
-    pi = pi * 4.0;
+    pi *= 4;
     printf("Pi = %.15f\n", pi);
     printf("Pi = %.15f\n", M_PI);
-    delete(threadId, threadInfo);
     pthread_exit(SUCCESS);
 }
