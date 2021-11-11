@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="lab16_os2" targetName="lab16_os2" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a559d09e-a8dc-4873-b539-4218514ccff3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/CLionProjects.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../1-1/.idea/1-1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AVL-trees-height/.idea/AVL-trees-height.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../A_star/.idea/A_star.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Boyer-jerk-Moore/.idea/Boyer-jerk-Moore.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Dijkstra/.idea/Dijkstra.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FUCK_TESTS_OOP/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FUCK_TESTS_OOP/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FUCK_TESTS_OOP/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FUCK_TESTS_OOP/matrix.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FUCK_TESTS_OOP/matrix.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Graph/.idea/Graph.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Huffman/.idea/Huffman.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kate lab4/.idea/Kate lab4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kruskal/.idea/Kruskal.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Kv_koren/.idea/Kv_koren.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LIB_USB/.idea/LIB_USB.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lera'sTS/.idea/Lera'sTS.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Login_Hash_Tag/.idea/Login_Hash_Tag.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../MIN_MAX_TREE/.idea/MIN_MAX_TREE.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Mersenn_numbers/.idea/Mersenn_numbers.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../NEW_ONE/.idea/NEW_ONE.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Number_of_leafs/.idea/Number_of_leafs.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Prim/.idea/Prim.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RN_F_A/.idea/RN_FUCKING_A.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rabin-Karp/.idea/Rabin-Karp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Rabin-fucking-Carp/.idea/Rabin-fucking-Carp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Reversed_List/.idea/Reversed_List.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SQRT/.idea/SQRT.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TOPSORT_GRAPH/.idea/TOPSORT_GRAPH.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TS/.idea/TS.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Tasks/.idea/Tasks.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Trees/.idea/Trees.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../VoronovT/.idea/VoronovT.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ziklicheskiy_sdvig/.idea/Ziklicheskiy_sdvig.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../brand_new_TS/.idea/brand_new_TS.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/.idea/main.cpp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/ErrorCatcher.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/TuplePrinter.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/cmake-build-debug/parser.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/parser.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/tuple.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../csv_parser/tuple.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exam_preparations/.idea/exam_preparations.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../exponent/.idea/ЭВМ_лаб1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../get_time/.idea/get_time.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hate-you-topsort/.idea/hate-you-topsort.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab10/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab10/.idea/lab10.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab10/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab10/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab10/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab10/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab10/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab11_os2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab11_os2/.idea/lab11_os2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab11_os2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab11_os2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab11_os2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab14_os2/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab1_os5th/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab1_os5th/.idea/lab1_os5th.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab1_os5th/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab1_os5th/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab1_os5th/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2_os5sem/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2_os5sem/.idea/lab2_os5sem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2_os5sem/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2_os5sem/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab2_os5sem/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab4_os5sem/.idea/lab4_os5sem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab5/.idea/lab5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab5_os5sem/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab5_os5sem/.idea/lab5_os5sem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../laba_4_parser_csv/.idea/laba_4_parser_csv.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../laba_4_parser_csv/CSVParser.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../laba_4_parser_csv/TuplePrintUtility.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../matrix_based_Prim/.idea/matrix_based_Prim.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../max_dvoich_zapis'/.idea/max_dvoich_zapis'.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mpi_training/.idea/mpi_training.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mpi_ver1/.idea/mpi_ver1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mpi_ver2/.idea/mpi_ver2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mpi_wo_parallel/.idea/mpi_wo_parallel.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mpi_wo_parallel/cgm.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mpi_wo_parallel/cgm.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mpi_wo_parallel/cmake-build-debug/config.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../new_course/.idea/new_course.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opencv/.idea/opencv.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp/.idea/opp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_first_mpi/.idea/opp_lab1_first_mpi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/.idea/opp_lab1_second_mpi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/opp_lab1_second_mpi.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/opp_lab1_second_mpi.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/opp_lab1_second_mpi.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/opp_lab1_second_mpi.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/opp_lab1_second_mpi.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/opp_lab1_second_mpi.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/opp_lab1_second_mpi.dir/linklibs.rsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/opp_lab1_second_mpi.dir/objects1.rsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/opp_lab1_second_mpi.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/cmake-build-debug/opp_lab1_second_mpi.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_second_mpi/main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_without_mpi/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_without_mpi/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_without_mpi/.idea/opp_lab1_without_mpi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_without_mpi/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab1_without_mpi/main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab2_openmp_1/.idea/opp_lab2_openmp_1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab2_openmp_2/.idea/opp_lab2_openmp_2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab2_openmp_sch/.idea/opp_lab2_openmp_sch.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab3/.idea/opp_lab3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab4/.idea/opp_lab4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab5/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../opp_lab5/.idea/opp_lab5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab1/.idea/os_lab1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab10/.idea/os_lab10.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab18/.idea/os_lab18.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab19/.idea/os_lab19.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab2/.idea/os_lab2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab25/.idea/os_lab25.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab26/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab26/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab26/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab26/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab26/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab26/.idea/os_lab26.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab26/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab26/reader.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab3/.idea/os_lab3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab4/.idea/os_lab4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab5/.idea/os_lab5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab6/.idea/os_lab6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab7/.idea/os_lab7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab9/.idea/os_lab9.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../os_lab9_ver2/.idea/os_lab9_ver2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/.idea/osi_lab8.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/3.19.2/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/osi_lab8.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/osi_lab8.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/osi_lab8.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/osi_lab8.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/osi_lab8.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/osi_lab8.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/osi_lab8.dir/linklibs.rsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/osi_lab8.dir/objects1.rsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/osi_lab8.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/cmake-build-debug/osi_lab8.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../osi_lab8/main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../parallel_programming_lab4/.idea/parallel_programming_lab4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../perevod_vremeni/.idea/perevod_vremeni.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permutations/.idea/permutations.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../print_vector_part/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../print_vector_part/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../projectEilera/.idea/projectEilera.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../reversed_words/.idea/untitled14.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/.idea/main.cpp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/Game.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/Game.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/Map.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/Map.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/cmake-build-debug/CMakeFiles/3.17.3/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/cmake-build-debug/CMakeFiles/3.17.3/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../robots_on_mars/questions.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../stack_based_topsort/.idea/stack_based_topsort.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tree_levels/.idea/tree_levels.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled/.idea/untitled.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled1/.idea/untitled1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled10/.idea/untitled10.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled11/.idea/untitled11.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled12/.idea/untitled12.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled13/.idea/untitled13.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled2/.idea/untitled2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled3/.idea/untitled3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled4/.idea/untitled4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled5/.idea/untitled5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled6/.idea/untitled6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled7/.idea/untitled7.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled8/.idea/untitled8.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../untitled9/.idea/untitled9.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="20mjP8vRK2AlasrGiWTGA5HWNn6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lab16_os2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lab16_os2" TARGET_NAME="lab16_os2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lab16_os2" RUN_TARGET_NAME="lab16_os2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a559d09e-a8dc-4873-b539-4218514ccff3" name="Default Changelist" comment="" />
+      <created>1636656630496</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636656630496</updated>
+      <workItem from="1636656633765" duration="2643000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
