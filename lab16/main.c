@@ -50,6 +50,9 @@ int main(int argc, char* argv[]) {
 
     }
 
+    sem_close(sem1);
+    sem_close(sem2);
+    
     sem_unlink(name_sem1);
     sem_unlink(name_sem2);
     return 0;
