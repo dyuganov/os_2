@@ -5,13 +5,11 @@
 между исполнениями каждого шага сортировки (между перестановками записей в списке).
 При этом можно будет наблюдать процесс сортировки по шагам.
 */
-
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <stdbool.h>
 
 #define BUF_SIZE 80
 #define FGETS_EMPTY_STRING "\n"
@@ -24,6 +22,7 @@ typedef struct Node {
 
 Node *head;
 int size = 0;
+
 
 int isReady(int fd) {
     fd_set fdset;
@@ -113,15 +112,15 @@ void printList(Node *head) {
     }
     lockMutex(&(head->mutex));
     Node *prev = head;
-    printf("\n\n------------------LIST:\n");
+    printf("\n-----LIST----\n");
     for (Node *iter = head->next; iter; iter = iter->next) {
         lockMutex(&(iter->mutex));
         unlockMutex(&(prev->mutex));
-        printf("%s\n", iter->string);
+        printf("%s", iter->string);
         prev = iter;
     }
     unlockMutex(&(prev->mutex));
-    printf("----------------------:\n");
+    printf("-------------\n");
 
 }
 
@@ -177,22 +176,23 @@ int compare(char *left, char *right) {
 }
 
 void *sort(void *data) {
-    int sleepingTime = 5;
-    while (true) {
-        printf("Sorting starts, st = %d\n", sleepingTime);
-        Node *prev = head;
-        if (sleep(sleepingTime)) {
+    const int SLEEP_TIME = 5;
+    while (1) {
+        printf("Sorting starts, st = %d\n", SLEEP_TIME);
+        if (isReady(0)) return data;
+        if (sleep(SLEEP_TIME)) {
             atExit("Error sleeping");
         }
-        if (isReady(0)) return data;
-        lockMutex(&(head->mutex));
-        lockMutex(&(head->next->mutex));
+        Node *prev = head;
         int i = 0, j = 0;
         for (Node *node = head->next; node; node = node->next, ++i, j = 0) {
-            for (Node *innerNode = head->next; j < size - i - 1; innerNode = innerNode->next, ++j) {
+            prev = head;
+            lockMutex(&(head->mutex));
+            lockMutex(&(head->next->mutex));
+            for (Node *innerNode = head->next; innerNode->next; innerNode = innerNode->next, ++j) {
                 lockMutex(&(innerNode->next->mutex));
                 if (compare(innerNode->next->string, innerNode->string) < 0) {
-                    sleep(1);
+                    usleep(100);
                     swap(&(innerNode->next->string), &(innerNode->string));
                 }
                 unlockMutex(&(prev->mutex));
@@ -206,14 +206,22 @@ void *sort(void *data) {
 }
 
 int main() {
-    pthread_t threadId, threadId2;
-    if (pthread_create(&threadId, NULL, sort, NULL)) {
-        atExit("Error creating thread");
+    const int N = 5;
+    pthread_t threadId[N];
+    for (int i = 0; i < N; ++i) {
+        if (pthread_create(&threadId[i], NULL, sort, NULL)) {
+            atExit("Error creating thread");
+        }
     }
+
     getStrings();
-    if (pthread_join(threadId, NULL)) {
-        atExit("Error waiting thread");
+
+    for (int i = 0; i < N; ++i) {
+        if (pthread_join(threadId[i], NULL)) {
+            atExit("Error waiting thread");
+        }
     }
+
     freeList(head);
     pthread_exit(EXIT_SUCCESS);
 }

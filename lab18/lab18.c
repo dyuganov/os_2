@@ -213,13 +213,20 @@ void *sort(void *data) {
 }
 
 int main() {
-    pthread_t threadId, threadId2;
-    if (pthread_create(&threadId, NULL, sort, NULL)) {
-        atExit("Error creating thread");
+    const int N = 5;
+    pthread_t threadId[N];
+    for(int i = 0; i < N; ++i){
+        if (pthread_create(&threadId[i], NULL, sort, NULL)) {
+            atExit("Error creating thread");
+        }
     }
+
     getStrings();
-    if (pthread_join(threadId, NULL)) {
-        atExit("Error waiting thread");
+
+    for(int i = 0; i < N; ++i){
+        if (pthread_join(threadId[i], NULL)) {
+            atExit("Error waiting thread");
+        }
     }
     freeList(head);
     pthread_exit(EXIT_SUCCESS);

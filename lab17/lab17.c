@@ -1,24 +1,11 @@
-/*
-17. Синхронизированный доступ к списку
-Родительская нить программы должна считывать вводимые пользователем строки
-и помещать их в начало связанного списка. Строки длиннее 80 символов можно
-разрезать на несколько строк. При вводе пустой строки программа должна
-выдавать текущее состояние списка. Дочерняя нить пробуждается каждые пять
-секунд и сортирует список в лексикографическом порядке (используйте пузырьковую сортировку).
-Все операции над списком должны синхронизоваться при помощи мутекса.
-*/
-
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <stdbool.h>
 
 #define BUF_SIZE 80
 #define FGETS_EMPTY_STRING "\n"
-
-#define SLEEP_TIME (5)
 
 typedef struct Node {
     char *string;
@@ -47,7 +34,7 @@ int isReady(int fd) {
 void destroyMutex() {
     if (pthread_mutex_destroy(&mutex) < 0) {
         perror("Error destoying mutex");
-        pthread_exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     }
 }
 
@@ -67,14 +54,14 @@ void atExit(char *errorMsg) {
     perror(errorMsg);
     destroyMutex();
     freeList(list);
-    pthread_exit(EXIT_FAILURE);
+    exit(EXIT_FAILURE);
 }
 
 Node *initNode(char *str, size_t size) {
     Node *node = malloc(sizeof(Node));
     if (node == NULL) {
         free(node);
-        perror("ERROR GETTING MEMORY FOR NODE\n");
+        printf("ERROR GETTING MEMORY FOR NODE\n");
         return NULL;
     }
     node->next = NULL;
@@ -85,6 +72,7 @@ Node *initNode(char *str, size_t size) {
         perror("Error creating node for input string");
         return NULL;
     }
+
     return node;
 }
 
@@ -131,12 +119,12 @@ void unlockMutex(pthread_mutex_t *mutex) {
     }
 }
 
-bool isEmptyString(char *buf) {
+int isEmptyString(char *buf) {
     if (!strcmp(FGETS_EMPTY_STRING, buf)) {
         printList(list);
-        return true;
+        return 1;
     }
-    return false;
+    return 0;
 }
 
 void getStrings() {
@@ -160,8 +148,10 @@ void swap(char **left, char **right) {
 
 int compare(char *left, char *right) {
     int leftLen = strlen(left), rightLen = strlen(right);
+
     int minLength = (leftLen > rightLen) ? rightLen : leftLen;
     int maxLength = (leftLen < rightLen) ? rightLen : leftLen;
+
     for (int i = 0; i < minLength; ++i) {
         if (left[i] != right[i]) {
             return 2 * (left[i] > right[i]) - 1;
@@ -174,11 +164,11 @@ int compare(char *left, char *right) {
 }
 
 void *sort(void *data) {
-    while (true) {
-        if (sleep(SLEEP_TIME)) {
+    while (1) {
+        if (sleep(5)) {
             atExit("Error sleeping");
         }
-        if (isReady(stdin)) return data;
+        if (isReady(0)) return data;
         printf("Starting sort\n");
         lockMutex(&mutex);
         int i = 0, j = 0;
@@ -197,17 +187,25 @@ void *sort(void *data) {
 int main() {
     if (pthread_mutex_init(&mutex, NULL) < 0) {
         perror("Error creating mutex");
-        pthread_exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     }
-    pthread_t threadId;
-    if (pthread_create(&threadId, NULL, sort, NULL)) {
-        atExit("Error creating thread");
+
+    const int N = 5;
+    pthread_t threadId[N];
+    for (int i = 0; i < N; ++i) {
+        if (pthread_create(&threadId[i], NULL, sort, NULL)) {
+            atExit("Error creating thread");
+        }
     }
+
     getStrings();
-    if (pthread_join(threadId, NULL)) {
-        atExit("Error waiting thread");
+
+    for (int i = 0; i < N; ++i) {
+        if (pthread_join(threadId[i], NULL)) {
+            atExit("Error waiting thread");
+        }
     }
+
     destroyMutex();
     freeList(list);
-    pthread_exit(EXIT_SUCCESS);
 }
