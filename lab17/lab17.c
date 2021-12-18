@@ -169,7 +169,6 @@ void *sort(void *data) {
             atExit("Error sleeping");
         }
         if (isReady(0)) return data;
-        printf("Starting sort\n");
         lockMutex(&mutex);
         int i = 0, j = 0;
         for (Node *node = list->head; node; node = node->next, ++i, j = 0) {

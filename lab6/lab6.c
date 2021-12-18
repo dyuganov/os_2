@@ -29,7 +29,7 @@ void* threadSortJob(void* arg) {
 
 bool isThreadsError(int errorCode){
     if(PTHREAD_SUCCESS != errorCode) {
-        char message[BUFFER_SIZE];
+        char message[ERR_MSG_SIZE];
         strerror_r(errorCode, message, sizeof message);
         fprintf(stderr, "Error: %s\n", message);
         return true;
@@ -62,7 +62,7 @@ bool isGetLinesNumError(int getLinesNumResult){
 }
 
 int main (int argc, char** argv) {
-    if(2 > argc) fprintf(stderr, "Wrong args num\n");
+    if(2 != argc) fprintf(stderr, "Wrong args num\n");
 
     FILE* file = fopen(argv[1], "r");
     if(NULL == file) {

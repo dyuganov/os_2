@@ -94,7 +94,6 @@ Node *initNode(char *str, size_t size) {
         perror("Error creating node for input string");
         return NULL;
     }
-
     return node;
 }
 
@@ -183,11 +182,11 @@ int compare(char *left, char *right) {
 }
 
 void *sort(void *data) {
-    int sleepingTime = 5;
-    while (true) {
-        printf("Sorting starts, st = %d\n", sleepingTime);
+    const int SLEEP_TIME = 5;
+    while (1) {
+        //printf("Sorting starts, st = %d\n", SLEEP_TIME);
         if (isReady(0)) return data;
-        if (sleep(sleepingTime)) {
+        if (sleep(SLEEP_TIME)) {
             atExit("Error sleeping");
         }
         Node *prev = head;
@@ -199,7 +198,7 @@ void *sort(void *data) {
             for (Node *innerNode = head->next; innerNode->next; innerNode = innerNode->next, ++j) {
                 lockMutex(&(innerNode->next->mutex));
                 if (compare(innerNode->next->string, innerNode->string) < 0) {
-                    usleep(100);
+                    //usleep(100);
                     swap(&(innerNode->next->string), &(innerNode->string));
                 }
                 unlockMutex(&(prev->mutex));
@@ -215,7 +214,7 @@ void *sort(void *data) {
 int main() {
     const int N = 5;
     pthread_t threadId[N];
-    for(int i = 0; i < N; ++i){
+    for (int i = 0; i < N; ++i) {
         if (pthread_create(&threadId[i], NULL, sort, NULL)) {
             atExit("Error creating thread");
         }
@@ -223,7 +222,7 @@ int main() {
 
     getStrings();
 
-    for(int i = 0; i < N; ++i){
+    for (int i = 0; i < N; ++i) {
         if (pthread_join(threadId[i], NULL)) {
             atExit("Error waiting thread");
         }

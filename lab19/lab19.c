@@ -39,7 +39,6 @@ void freeList(Node *head) {
     if (head == NULL) {
         return;
     }
-
     Node *tmpNode;
     for (Node *iter = head; iter; iter = tmpNode) {
         if (pthread_mutex_destroy(&(iter->mutex)) < 0) {
@@ -178,7 +177,7 @@ int compare(char *left, char *right) {
 void *sort(void *data) {
     const int SLEEP_TIME = 5;
     while (1) {
-        printf("Sorting starts, st = %d\n", SLEEP_TIME);
+        //printf("Sorting starts, st = %d\n", SLEEP_TIME);
         if (isReady(0)) return data;
         if (sleep(SLEEP_TIME)) {
             atExit("Error sleeping");
@@ -192,7 +191,8 @@ void *sort(void *data) {
             for (Node *innerNode = head->next; innerNode->next; innerNode = innerNode->next, ++j) {
                 lockMutex(&(innerNode->next->mutex));
                 if (compare(innerNode->next->string, innerNode->string) < 0) {
-                    usleep(100);
+                    //sleep(1);
+                    usleep(1000);
                     swap(&(innerNode->next->string), &(innerNode->string));
                 }
                 unlockMutex(&(prev->mutex));

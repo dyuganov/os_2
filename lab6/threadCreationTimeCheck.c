@@ -14,7 +14,7 @@
 
 bool isThreadsError(int errorCode){
     if(PTHREAD_SUCCESS != errorCode) {
-        char message[BUFFER_SIZE];
+        char message[ERR_MSG_SIZE];
         strerror_r(errorCode, message, sizeof message);
         fprintf(stderr, "Error: %s\n", message);
         return true;
